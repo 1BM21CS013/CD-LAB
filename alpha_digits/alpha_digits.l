@@ -1,0 +1,17 @@
+%{
+#include<stdio.h>
+%}
+%%
+[a-zA-Z] {printf("\n %s is a character", yytext);}
+[0-9] {printf("\n %s is a number", yytext);}
+. {ECHO;}
+%%
+int yywrap()
+{
+}
+int main()
+{
+printf("enter input: ");
+yylex();
+return 0;
+}
